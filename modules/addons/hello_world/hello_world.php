@@ -56,90 +56,32 @@ if (!defined("WHMCS")) {
  *
  * @return array
  */
-function addonmodule_config()
+function demo_config()
 {
-    return [
-        // Display name for your module
-        'name' => 'Addon Module Sample',
-        // Description displayed within the admin interface
-        'description' => 'This module provides an example WHMCS Addon Module'
-            . ' which can be used as a basis for building a custom addon module.',
-        // Module author name
-        'author' => 'Your name goes here',
-        // Default language
-        'language' => 'english',
-        // Version number
-        'version' => '1.0',
-        'fields' => [
-            // a text field type allows for single line text input
-            'Text Field Name' => [
-                'FriendlyName' => 'Text Field Name',
-                'Type' => 'text',
-                'Size' => '25',
-                'Default' => 'Default value',
-                'Description' => 'Description goes here',
-            ],
-            // a password field type allows for masked text input
-            'Password Field Name' => [
-                'FriendlyName' => 'Password Field Name',
-                'Type' => 'password',
-                'Size' => '25',
-                'Default' => '',
-                'Description' => 'Enter secret value here',
-            ],
-            // the yesno field type displays a single checkbox option
-            'Checkbox Field Name' => [
-                'FriendlyName' => 'Checkbox Field Name',
-                'Type' => 'yesno',
-                'Description' => 'Tick to enable',
-            ],
-            // the dropdown field type renders a select menu of options
-            'Dropdown Field Name' => [
-                'FriendlyName' => 'Dropdown Field Name',
-                'Type' => 'dropdown',
-                'Options' => [
-                    'option1' => 'Display Value 1',
-                    'option2' => 'Second Option',
-                    'option3' => 'Another Option',
-                ],
-                'Default' => 'option2',
-                'Description' => 'Choose one',
-            ],
-            // the radio field type displays a series of radio button options
-            'Radio Field Name' => [
-                'FriendlyName' => 'Radio Field Name',
-                'Type' => 'radio',
-                'Options' => 'First Option,Second Option,Third Option',
-                'Default' => 'Third Option',
-                'Description' => 'Choose your option!',
-            ],
-            // the textarea field type allows for multi-line text input
-            'Textarea Field Name' => [
-                'FriendlyName' => 'Textarea Field Name',
-                'Type' => 'textarea',
-                'Rows' => '3',
-                'Cols' => '60',
-                'Default' => 'A default value goes here...',
-                'Description' => 'Freeform multi-line text input field',
-            ],
-        ]
-    ];
+  function demo_config() {
+    $configarray = array(
+    "name" => "hello_world",
+    "description" => "this a custom addon module ",
+    "version" => "1.0",
+    "author" => "Mounir",
+    "fields" => array(
+        "option1" => array ("FriendlyName" => "Option1", "Type" => "text", "Size" => "25",
+                              "Description" => "Textbox", "Default" => "Example", ),
+        "option2" => array ("FriendlyName" => "Option2", "Type" => "password", "Size" => "25",
+                              "Description" => "Password", ),
+        "option3" => array ("FriendlyName" => "Option3", "Type" => "yesno", "Size" => "25",
+                              "Description" => "Sample Check Box", ),
+        "option4" => array ("FriendlyName" => "Option4", "Type" => "dropdown", "Options" =>
+                              "1,2,3,4,5", "Description" => "Sample Dropdown", "Default" => "3", ),
+        "option5" => array ("FriendlyName" => "Option5", "Type" => "radio", "Options" =>
+                              "Demo1,Demo2,Demo3", "Description" => "Radio Options Demo", ),
+        "option6" => array ("FriendlyName" => "Option6", "Type" => "textarea", "Rows" => "3",
+                              "Cols" => "50", "Description" => "Description goes here", "Default" => "Test", ),
+    ));
+    return $configarray;
 }
-
-/**
- * Activate.
- *
- * Called upon activation of the module for the first time.
- * Use this function to perform any database and schema modifications
- * required by your module.
- *
- * This function is optional.
- *
- * @see https://developers.whmcs.com/advanced/db-interaction/
- *
- * @return array Optional success/failure message
  */
-function addonmodule_activate()
+function demo_activate()
 {
     // Create custom tables and schema required by your module
     try {
