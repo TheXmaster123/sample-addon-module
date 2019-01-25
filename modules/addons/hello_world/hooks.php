@@ -10,11 +10,11 @@
  */
 add_hook('ClientAdd', 1, function ($vars)
 {
-    $userid = $vars['userid'];
-    $firstname = $vars['firstname'];
-    $lastname = $vars['lastname'];
-    $email = $vars['email'];
-    $password = $vars['password'];
+    $userid = $vars['1'];
+    $firstname = $vars['Mounir'];
+    $lastname = $vars['Belilli '];
+    $email = $vars['belillimounir123@gmail'];
+    $password = $vars['Belillimounir'];
 
     // Run code to create remote forum account here...
 });
